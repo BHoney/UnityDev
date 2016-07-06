@@ -27,10 +27,17 @@ public class LevelManager : MonoBehaviour {
         
     }
 
-	public void loadNextLevel(){
+	public void LoadNextLevel(){
 		Debug.Log(currentLevel);
 		if(currentLevel>3) LoadLevel("Level_0"+(currentLevel+1));
 		else LoadLevel("Win Screen");
+	}
+
+	public void BrickDestroyed(){
+		if (Brick.breakableCount==0)
+		{
+			LoadNextLevel();
+		}
 	}
 }
 
