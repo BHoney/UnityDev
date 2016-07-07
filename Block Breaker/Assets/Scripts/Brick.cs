@@ -9,6 +9,7 @@ public class Brick : MonoBehaviour
     private int hits;
     private LevelManager lm;
     private SpriteRenderer sprite;
+    public AudioClip crack;
     public static int breakableCount = 0;
     // Use this for initialization
     private bool isBreakable;
@@ -64,6 +65,7 @@ public class Brick : MonoBehaviour
     {
         if (isBreakable)
         {
+            AudioSource.PlayClipAtPoint(crack, transform.position);
             handleHits();
         }
     }
