@@ -57,7 +57,6 @@ public class Brick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(string.Format("There are {0} breakable bricks in the scene", breakableCount));
 
     }
 
