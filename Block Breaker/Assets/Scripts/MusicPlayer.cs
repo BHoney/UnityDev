@@ -6,7 +6,7 @@ public class MusicPlayer : MonoBehaviour {
     static MusicPlayer instance = null;
     void Awake()
     {
-        Debug.Log("Music Player Awake" + GetInstanceID());
+        //Debug.Log("Music Player Awake" + GetInstanceID());
         if (instance)
         {
             Destroy(gameObject);
@@ -20,7 +20,7 @@ public class MusicPlayer : MonoBehaviour {
     }
 
     void Start () {
-        Debug.Log("Music Player Start " + GetInstanceID());
+       // Debug.Log("Music Player Start " + GetInstanceID());
        
 	}
 	
