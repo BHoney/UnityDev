@@ -9,7 +9,7 @@ public class playerController : MonoBehaviour
     public GameObject laserPrefab;
     public float projectileSpeed;
 	public float fireRate = .2f;
-
+    public int hitPoints = 150;
     private float moveH = 0f;
     private float xmin;
     private float xmax;
@@ -41,6 +41,10 @@ public class playerController : MonoBehaviour
 		if (Input.GetKeyUp(KeyCode.Space)) CancelInvoke("shoot");
         float boundaries = Mathf.Clamp(transform.position.x, xmin, xmax);
         transform.position = new Vector2(boundaries, transform.position.y);
+
+        if(hitPoints <= 0){
+            Destroy(gameObject);
+        }
     }
 
     void move(Direction direction)
@@ -61,7 +65,16 @@ public class playerController : MonoBehaviour
 
     void shoot(){
         print("Shooting");
-        GameObject laser = (GameObject)Instantiate(laserPrefab, transform.position, Quaternion.identity);
+        Vector3 barrel = new Vector3(0, 1, 0);
+        GameObject laser = (GameObject)Instantiate(laserPrefab, transform.position+barrel, Quaternion.identity);
         laser.GetComponent<Rigidbody2D>().velocity += Vector2.up * projectileSpeed;
     }
+
+     void OnTriggerEnter2D(Collider2D other){
+        if (other.GetComponent<Projectile>()){
+			Debug.Log("I'm Hit");
+            hitPoints -= other.GetComponent<Projectile>().GetDamage();
+        }
+     }
 }
+
