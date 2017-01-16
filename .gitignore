@@ -28,3 +28,4 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+/Glitch Gardens/Glitch Gardens/Temp/UnityLockfile
