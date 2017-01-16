@@ -1,0 +1,93 @@
+﻿    using UnityEngine;
+    using UnityEngine.SceneManagement;
+    using System.Collections;
+    using UnityEngine.UI;
+
+    public class NumberWizards : MonoBehaviour {
+	    // Use this for initialization
+	    int max;
+	    int min;
+	    int guess;
+<<<<<<< HEAD
+        public int maxGuess;
+        public Text text;
+=======
+        public int maxGuess;
+        public Text text;
+>>>>>>> a58cc1bab4b719cfebaf4648b2980a1f00c1c822
+        public Text counter;
+
+	    void Start () {
+        
+		    StartGame();
+<<<<<<< HEAD
+	    }
+
+        void StartGame()
+        {
+            maxGuess = 10;
+            max = 1000;
+            min = 1;
+            guess = (int)Random.Range(min, max + 1);
+            text.text = guess.ToString();
+            counter.text ="Guesses Remaining: "+ maxGuess.ToString();    
+
+
+    }
+
+    public void GuessLower(){
+        max = guess;
+        NextGuess();
+    }
+
+    public void GuessHigher()
+    {
+        min = guess;
+        NextGuess();
+    }
+
+	void NextGuess () {
+        if (maxGuess == 0) {
+            SceneManager.LoadScene("Win");
+        }
+        guess = (int)Random.Range(min, max+1);
+        text.text = guess.ToString();
+        maxGuess--;
+        counter.text = "Guesses Remaining: " + maxGuess.ToString();
+=======
+	    }
+
+        void StartGame()
+        {
+            maxGuess = 10;
+            max = 1000;
+            min = 1;
+            guess = (int)Random.Range(min, max + 1);
+            text.text = guess.ToString();
+            counter.text ="Guesses Remaining: "+ maxGuess.ToString();    
+
+
+    }
+
+    public void GuessLower(){
+        max = guess;
+        NextGuess();
+    }
+
+    public void GuessHigher()
+    {
+        min = guess;
+        NextGuess();
+    }
+
+	void NextGuess () {
+        if (maxGuess == 0) {
+            SceneManager.LoadScene("Win");
+        }
+        guess = (int)Random.Range(min, max+1);
+        text.text = guess.ToString();
+        maxGuess--;
+        counter.text = "Guesses Remaining: " + maxGuess.ToString();
+>>>>>>> a58cc1bab4b719cfebaf4648b2980a1f00c1c822
+    }
+}

@@ -1,0 +1,35 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class LevelManager : MonoBehaviour {
+
+<<<<<<< HEAD
+	public void LoadLevel(string name)
+    {
+        Debug.Log("Loading "+ name);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(name); //Application.LoadLevel is obsolete
+       // Application.LoadLevel(name);
+        
+    }
+
+    public void Quit()
+    {
+        Debug.Log("Quit requested");
+        Application.Quit();
+=======
+	public void LoadLevel(string name)
+    {
+        Debug.Log("Loading "+ name);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(name); //Application.LoadLevel is obsolete
+       // Application.LoadLevel(name);
+        
+    }
+
+    public void Quit()
+    {
+        Debug.Log("Quit requested");
+        Application.Quit();
+>>>>>>> a58cc1bab4b719cfebaf4648b2980a1f00c1c822
+    }
+}
+

@@ -3,10 +3,9 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class LevelManager : MonoBehaviour {
-	public float autoLoadAfter;
+	//public float autoLoadAfter;
 
 	void Start(){
-		Invoke("LoadNextLevel", autoLoadAfter);
 	}
 
 	public void LoadLevel(string name){
